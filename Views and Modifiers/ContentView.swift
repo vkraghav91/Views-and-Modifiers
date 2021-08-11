@@ -9,8 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+       Text("hello")
+        .largeTitle()
+        }
+      }
+
+struct Titles: ViewModifier{
+    func body(content: Content) -> some View {
+        VStack{
+            content.font(.largeTitle)
+                .foregroundColor(.blue)
+        }
+    }
+    
+}
+extension View{
+    func largeTitle() -> some View {
+        modifier(Titles())
     }
 }
 
